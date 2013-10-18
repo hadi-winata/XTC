@@ -1,0 +1,47 @@
+<div class="container transparent">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				
+				<div class="span8">
+					<%= image_tag("creatives_2.png", id: "img-rounded") %>
+					<%#= image_tag("mantap.png", id: "img-rounded") %>
+				</div>
+
+				<div class="span4">
+					<div id="form-signin">
+						<%= form_for(:session, url: sessions_path) do |f| %>
+						<%= f.text_field :email, placeholder: "Alamat email" %>
+
+						<div class="row-fluid">
+							<div class="span9">
+								<%= f.password_field :password, placeholder: "Sandi" %>
+							</div>
+							<div class="span3">
+								<%= f.submit "Masuk", :class => "btn btn-primary btn-block" %>
+								<% end %>
+							</div>
+						</div>
+
+						<% flash.each do |key, value| %>
+						<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+						<% end %>		
+					</div>
+
+					<div id="form-signup">
+						<h2>Gratis, silahkan daftar</h2>
+						<%#= form_for(@user) do |f| %>
+						<%= form_for(:user, url: users_path) do |f| %>
+		        <%# flash.each do |key, value| %>
+		        <%#= content_tag(:div, value, class: "alert alert-#{key}") %>
+		        <%# end %>
+		        <%#= render 'shared/error_messages', object: f.object %>
+		        <%= render 'users/fields', f: f %>
+		        <%= f.submit "Daftar", class: "btn btn-primary btn-block", "data-no-turbolink" => true %>
+		        <% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

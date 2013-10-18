@@ -1,0 +1,28 @@
+<% provide(:title, 'Teman') %>
+
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <div class="span3">
+        </div>
+
+        <div class="span6">
+        	<div id="konten">
+	        	<h2>Teman</h2>
+	        	<ul class="users">
+	        		<small><%= render @users %></small>
+						</ul>
+					</div>
+				</div>
+
+				<div class="span3">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

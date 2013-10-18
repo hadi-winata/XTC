@@ -1,0 +1,52 @@
+<% if signed_in? %>
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <div class="span12">
+      <div class="row-fluid">
+
+        <div class="span3">
+          <div id="profil-kiri">
+            <center><%= image_tag("ads200x200.png") %></center>
+          </div>
+        </div>
+
+        <div class="span6">
+
+          <div class="profil-heading">
+            <section>
+              <%= render 'shared/micropost_form' %>
+            </section>
+          </div>
+          <%= render 'shared/feed' %>
+        </div>
+
+        <div class="span3">
+          <div id="profil-kanan">
+            <section>
+              <%= render 'shared/user_info' %>
+            </section>
+            <div id="shared-stats">
+            <%= render 'shared/stats' %>
+          </div>
+            <%= image_tag("ads300x250.png", width: '220') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+<%= render 'shared/depan' %>
+<% end %>
+
+<script src="jquery.MaxInput.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  $("#demo2").maxinput({
+        position  : 'bottomleft',
+        limit   : 140
+      });
+});
+</script>

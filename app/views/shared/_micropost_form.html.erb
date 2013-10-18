@@ -1,0 +1,12 @@
+<%= form_for(@micropost, url: root_path) do |f| %> 
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<% flash.each do |key, value| %>
+	<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+
+<%= f.text_area :content, placeholder: "Kirim status..." %>
+</div>
+<%= f.submit "Kirim", class: "btn btn-small btn-primary" %>
+
+<% end %>

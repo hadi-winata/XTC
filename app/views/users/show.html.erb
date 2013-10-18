@@ -1,0 +1,74 @@
+<% provide(:title, @user.name) %>
+
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <div class="span12">
+      <div class="row-fluid">
+
+        <div class="span3">
+          <div id="profil-kiri">
+            <%= ad_unit(:small_square, "ca-pub-0739063314064317", {
+              :slot => "4677317138",
+              :type => "text_image", 
+              :theme => {
+              :background => "yellow",
+              #:border
+              :link => "#fff"
+              #:text
+              #:url
+            }
+            }) %>
+            <center><%= image_tag("ads200x200.png") %></center>
+          </div>
+        </div>
+
+        <div class="span6">
+
+          <div class="profil-heading">
+          </div>
+
+          <div id="shared-stats">
+            <%= render 'shared/stats' %>
+          </div>
+
+          <div id="konten">
+            <%#= render 'follow_form' if signed_in? %>
+            <h2>Status</h2>
+            <% if @user.microposts.any? %>
+            
+            <ul class="microposts">
+              <%= render @microposts %>
+                <%#= render :partial => @user, :collection => @microposts %>
+
+            </ul>
+            <center><%= will_paginate @microposts %></center>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="span3">
+          <div id="profil-kanan">
+            <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-0739063314064317";
+            /* 200x200 */
+            google_ad_slot = "4677317138";
+            google_ad_width = 200;
+            google_ad_height = 200;
+            //-->
+            </script>
+            <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+          </div>
+          <div id="profil-kanan">
+            <%= image_tag("ads200x200.png") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

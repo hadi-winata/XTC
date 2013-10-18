@@ -1,0 +1,9 @@
+<% if @feed_items.any? %>
+<div id="konten">
+	<h2>Curhatan</h2>
+	<ol class="microposts">
+		<%= render partial: 'shared/feed_item', collection: @feed_items %>
+	</ol>
+	<center><%= will_paginate @feed_items %></center>
+</div>
+<% end %>

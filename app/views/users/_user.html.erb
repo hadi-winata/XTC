@@ -1,0 +1,10 @@
+<li>
+	<%= gravatar_for user, size: 30 %>
+  	<%= link_to user.name, user %>
+  	<% #if current_user.admin? && !current_user?(user) %>
+  	<% if current_user && current_user.admin? %>
+  	<% #if current_user.try(:admin?) %>
+  	<%= link_to "Hapus", user, method: :delete, data: { confirm: "Kamu yakin ?" } %>
+  	<% end %>
+</li>
+<!-- yang digelapin itu kode yg dipermasalahkan-->

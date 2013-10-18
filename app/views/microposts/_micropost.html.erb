@@ -1,0 +1,13 @@
+<li>
+	<%= gravatar_for @user %>
+  <span class="content"><small><%= wrap(micropost.content) %></small></span>
+  <span class="timestamp">
+    <small><%= time_tag(micropost.created_at, :format => 'Tanggal %d/%m/%Y Jam %R WIB') %></small>
+  </span>
+
+  <% if current_user?(micropost.user) %>
+  <small>
+  	<%= link_to "Hapus", micropost,	method: :delete, data: { confirm: "Kamu yakin ?" }, title: micropost.content %>
+  </small>
+  <% end %>
+</li>

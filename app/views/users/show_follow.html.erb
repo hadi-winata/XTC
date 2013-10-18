@@ -1,0 +1,48 @@
+<% provide(:title, @title) %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        
+        <div class="span3">
+          <div id="profil-kiri">
+            <%= image_tag("ads300x250.png", height: '250', width: '300') %>
+          </div>
+        </div>
+
+        <div class="span6"> 
+
+          <div class="profil-heading">
+            <section>
+              <%= gravatar_for @user %>
+              <h2><%= @user.name %></h2>
+            </section>
+          </div>
+
+          <div id="shared-stats">
+            <%= render 'shared/stats' %>
+          </div>
+
+          <div id="konten">
+            <h2><%= @title %></h2>
+            <% if @users.any? %>
+            
+            <ul class="users">
+              <%= render @users %>
+            </ul>
+            
+            <!--<center><%#= will_paginate %></center>-->
+            <% end %>
+          </div>
+        </div>
+
+        <div class="span3">
+          <div id="profil-kanan">
+            <%= image_tag("ads300x250.png", width: '220') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
